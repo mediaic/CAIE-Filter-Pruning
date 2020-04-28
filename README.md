@@ -3,7 +3,7 @@ This is the official repository of our paper:
   
 Constraint-Aware Importance Estimation for Global Filter Pruning under Multiple Resource Constraints  
 [Yu-Cheng Wu](https://github.com/ericwu2620), [Chih-Ting Liu](https://github.com/jackie840129), Bo-Ying Chen, Shao-Yi Chien.  
-[Joint Workshop on Efficient Deep Learning in Computer Vision 2020](https://workshop-edlcv.github.io/) (in conjunction with CVPR 2020)
+Joint Workshop on Efficient Deep Learning in Computer Vision (in conjunction with CVPR 2020) [[link]](https://workshop-edlcv.github.io/) 
 
 ## Requirements
 - Python 3.6+
