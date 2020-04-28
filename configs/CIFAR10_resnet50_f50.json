@@ -1,0 +1,58 @@
+{
+    "base": {
+        "task_name": "CIFAR10_resnet50",
+        "cuda": true,
+        "deterministic": false,
+        "seed": 0
+    },
+    "model": {
+        "name": "cifar.resnet50",
+        "num_class": 10,
+        "pretrained": true,
+        "pretrained_path": "./checkpoint/pretrained/cifar10_resnet50.ckpt",
+        "load_module_group": true,
+        "save_module_group": true,
+        "module_group_path":"./models/cifar/resnet50_mg.json"
+    },
+    "data": {
+        "type": "cifar10",
+        "shuffle": true,
+        "batch_size": 256,
+        "test_batch_size": 256,
+        "num_workers": 8
+    },
+    "train": {
+        "trainer":"normal",
+        "max_epoch": 240,
+        "optim": "sgd",
+        "lr": 1e-3,
+        "steplr": [
+            [80, 1.0],
+            [160, 0.2],
+            [240, 0.04]
+        ],
+        "weight_decay": 1e-4,
+        "momentum": 0.9,
+        "nesterov": false
+    },
+    "loss": {
+        "criterion": "softmax"
+    },
+    "prune": {
+        "res_cstr":{
+            "flops": 0.50
+        },
+        "min_ch_ratio": 0.1,
+        "update_param":true,
+        "lr": 1e-3,
+        "momentum": 0.9,
+        "weight_decay": 1e-4,
+        "nesterov": false,
+        "te_method": "sq_of_sum2",
+        "avg_type":"exp",
+        "pr_step":30,
+        "caie": true,
+        "num_for_probe": 1,
+        "num_to_pr": 25
+    }
+}

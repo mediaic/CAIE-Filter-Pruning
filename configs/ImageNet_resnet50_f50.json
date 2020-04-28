@@ -1,0 +1,58 @@
+{
+    "base": {
+        "task_name": "ImageNet_resnet50",
+        "cuda": true,
+        "deterministic": false,
+        "seed": 0
+    },
+    "model": {
+        "name": "imagenet.resnet50",
+        "num_class": 1000,
+        "pretrained": true,
+        "pretrained_path": "",
+        "load_module_group": true,
+        "save_module_group": true,
+        "module_group_path":"./models/imagenet/resnet50_mg.json"
+    },
+    "data": {
+        "type": "imagenet",
+        "shuffle": true,
+        "batch_size": 64,
+        "test_batch_size": 64,
+        "num_workers": 8
+    },
+    "train": {
+        "trainer":"normal",
+        "max_epoch": 30,
+        "optim": "sgd",
+        "lr": 1e-3,
+        "steplr": [
+            [10, 1.0],
+            [20, 0.2],
+            [30, 0.04]
+        ],
+        "weight_decay": 1e-4,
+        "momentum": 0.9,
+        "nesterov": false
+    },
+    "loss": {
+        "criterion": "softmax"
+    },
+    "prune": {
+        "res_cstr":{
+            "flops": 0.50
+        },
+        "min_ch_ratio": 0.1,
+        "update_param":true,
+        "lr": 1e-3,
+        "momentum": 0.9,
+        "weight_decay": 1e-4,
+        "nesterov": false,
+        "te_method": "sq_of_sum2",
+        "avg_type":"exp",
+        "pr_step":30,
+        "caie": true,
+        "num_for_probe": 1,
+        "num_to_pr": 25
+    }
+}
