@@ -1,12 +1,13 @@
 # Constraint-Aware Importance Estimation for Global Filter Pruning under Multiple Resource Constraints
-This repo contains required scripts to reproduce results from paper:  
+This is the official repository of our paper:  
   
 Constraint-Aware Importance Estimation for Global Filter Pruning under Multiple Resource Constraints  
-Yu-Cheng Wu, Chih-Ting Liu, Bo-Ying Chen, Shao-Yi Chien.  
-EDLCV 2020 (CVPRW 2020)
+[Yu-Cheng Wu](https://github.com/ericwu2620), [Chih-Ting Liu](https://github.com/jackie840129), Bo-Ying Chen, Shao-Yi Chien.  
+[Joint Workshop on Efficient Deep Learning in Computer Vision 2020](https://workshop-edlcv.github.io/) (in conjunction with CVPR 2020)
 
 ## Requirements
-python 3.6+ and PyTorch 1.0+
+- Python 3.6+
+- PyTorch 1.2+ (We test the code under version 1.2)
 
 ## Usage
 Run `main.py` to get a pruned model given the resource constraints (maximum proportion of FLOPs and params left), 
