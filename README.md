@@ -5,6 +5,10 @@ Constraint-Aware Importance Estimation for Global Filter Pruning under Multiple 
 [Yu-Cheng Wu](https://github.com/ericwu2620), [Chih-Ting Liu](https://github.com/jackie840129), Bo-Ying Chen, Shao-Yi Chien.  
 Joint Workshop on Efficient Deep Learning in Computer Vision (in conjunction with CVPR 2020) [[link]](https://workshop-edlcv.github.io/) 
 
+## Notification
+
+- **We will release the paper link and add more instructions of the usage soon !**
+
 ## Requirements
 - Python 3.6+
 - PyTorch 1.2+ (We test the code under version 1.2)
