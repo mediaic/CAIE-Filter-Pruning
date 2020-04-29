@@ -14,9 +14,9 @@ def make_as_dotdict(obj):
 def parse_config():
     print('Parsing config file...')
     parser = argparse.ArgumentParser(description="config")
-    parser.add_argument("--config", type=str, default="configs/base.json", help="Configuration file to use")
-    parser.add_argument("--flops", type=float, default=0.0, help="Maximum proportion of FLOPs left")
-    parser.add_argument("--param", type=float, default=0.0, help="Maximum proportion of param left")
+    parser.add_argument("--config", type=str, default="configs/ImageNet_resnet50_f50.json", help="Configuration file to use")
+    parser.add_argument("--flops", type=float, default=1.0, help="Maximum proportion of FLOPs left")
+    parser.add_argument("--param", type=float, default=1.0, help="Maximum proportion of param left")
     parser.add_argument("--no_caie", action='store_true', help="Applying Constraint-Aware Importance Estimation or not")
     parser.add_argument("--gpu_id", type=str, default="0", help="GPU ID")
     parser.add_argument("--show_cfg", action='store_true', help="Showing the configuration on screen or not")
@@ -30,10 +30,13 @@ def parse_config():
     
     # Overwrite the default configs
     config.prune.caie = (not args.no_caie) and config.prune.caie
-    if args.flops > 0:
+    if args.flops < 1 and args.flops > 0:
         config.prune.res_cstr.flops = args.flops
-    if args.param > 0:
+    if args.param < 1 and args.param > 0:
         config.prune.res_cstr.param = args.param
+    
+    assert (config.prune.res_cstr.flops < 1) and (config.prune.res_cstr.flops > 0), 'Invalid FLOPs constraint!!'
+    assert (config.prune.res_cstr.param < 1) and (config.prune.res_cstr.param > 0), 'Invalid Params constraint!!'
 
     if args.show_cfg:
         print(json.dumps(config, indent=4, sort_keys=True))
