@@ -1,5 +1,5 @@
 # Constraint-Aware Importance Estimation for Global Filter Pruning under Multiple Resource Constraints
-This is the official repository of our paper:  
+This is the official repository of our [paper](https://openaccess.thecvf.com/content_CVPRW_2020/papers/w40/Wu_Constraint-Aware_Importance_Estimation_for_Global_Filter_Pruning_Under_Multiple_Resource_CVPRW_2020_paper.pdf):  
   
 Constraint-Aware Importance Estimation for Global Filter Pruning under Multiple Resource Constraints  
 [Yu-Cheng Wu](https://github.com/ericwu2620), [Chih-Ting Liu](https://github.com/jackie840129), Bo-Ying Chen, Shao-Yi Chien.  
@@ -7,7 +7,7 @@ Joint Workshop on Efficient Deep Learning in Computer Vision (in conjunction wit
 
 ## Notification
 
-- **We will release the paper link and add more instructions of the usage soon !**
+- **We will add more instructions of the usage soon !**
 
 ## Requirements
 - Python 3.6+
@@ -32,6 +32,11 @@ Options:
 ## Citation
 If you use this code for your research, please cite our papers:
 ```
-@{
+@inproceedings{wu2020constraint,
+  title={Constraint-Aware Importance Estimation for Global Filter Pruning Under Multiple Resource Constraints},
+  author={Wu, Yu-Cheng and Liu, Chih-Ting and Chen, Bo-Ying and Chien, Shao-Yi},
+  booktitle={Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition Workshops},
+  pages={686--687},
+  year={2020}
 }
 ```
